@@ -5,7 +5,7 @@
 # 公開資料から AI が埋め、聞き取り（interviews/）で補った。
 #
 # この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
-# nro45m は nro-45m-antenna、if-system と sw-cosmos はハブの assets/nro45m.yaml（運用リポジトリができるまで）。
+# nro45m は nro-45m-antenna、sw-cosmos は nro-45m-control、if-system はハブの assets/nro45m.yaml（運用リポジトリができるまで）。
 #
 # 出典の略記
 #   データシート：45m 鏡のデータシート https://www.nro.nao.ac.jp/en/projects/45m/datasheets/ （2026-11-18 に確認）
@@ -79,7 +79,7 @@
   depends_on: [be-sam45, be-yatsugatake, sw-cosmos]
   status: 試験中
   maintenance: {by: 所内, condition: 未記入, effort: 中}
-  renewal: SAM45 が廃止され、分光計が YATSUGATAKE に一本化された時点で archive する
+  renewal: SAM45 が廃止され、分光計が YATSUGATAKE に一本化された時点で archive する。最終版の連携ソフトウェア（YKSP-LC）は COSMOS のマネージャーにつながる予定（nro-45m-control の interviews/2026-11-18.md 問6）
   owner_role: 計算機グループ
   maintainers: 1
   repos:
