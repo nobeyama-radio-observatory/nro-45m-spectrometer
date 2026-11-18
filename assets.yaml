@@ -4,8 +4,8 @@
 # 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
 # 公開資料から AI が埋め、聞き取り（interviews/）で補った。
 #
-# この台帳にない id（nro45m、if-system）は、ハブの assets/nro45m.yaml にある。
-# それぞれの運用リポジトリができたら、そちらに移る。
+# この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
+# nro45m は nro-45m-antenna、if-system と sw-cosmos はハブの assets/nro45m.yaml（運用リポジトリができるまで）。
 #
 # 出典の略記
 #   データシート：45m 鏡のデータシート https://www.nro.nao.ac.jp/en/projects/45m/datasheets/ （2026-11-18 に確認）
@@ -76,7 +76,7 @@
   name: SAM45 互換のソフトウェア（YATSUGATAKE で SAM45 の故障したアレイを肩代わりする）
   kind: ソフトウェア
   part_of: be-sam45
-  depends_on: [be-sam45, be-yatsugatake]
+  depends_on: [be-sam45, be-yatsugatake, sw-cosmos]
   status: 試験中
   maintenance: {by: 所内, condition: 未記入, effort: 中}
   renewal: SAM45 が廃止され、分光計が YATSUGATAKE に一本化された時点で archive する
@@ -85,7 +85,7 @@
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
   sources:
-    - YATSUGATAKE-NRO45-sam45compat の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat
+    - YATSUGATAKE-NRO45-sam45compat の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat （既存の COSMOS を使い、改修は最小限にとどめる）
     - 保守の手間、担い手の数：聞き取り2026-11-18 問8（YATSUGATAKE と同じという見立て）
     - 役割：聞き取り2026-11-18 問7
     - 担当：聞き取り2026-11-18 問0、問9
