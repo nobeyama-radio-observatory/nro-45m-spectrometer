@@ -1,0 +1,73 @@
+# 資産の台帳：45m 鏡の分光計
+# 項目の定義はハブの assets/README.md を参照。
+#   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
+# 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
+# 公開資料から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+#
+# この台帳にない id（nro45m、if-system）は、ハブの assets/nro45m.yaml にある。
+# それぞれの運用リポジトリができたら、そちらに移る。
+#
+# 出典の略記
+#   データシート：45m 鏡のデータシート https://www.nro.nao.ac.jp/en/projects/45m/datasheets/ （2026-11-18 に確認）
+#   障害情報：NRO45m 障害情報 https://www.nro.nao.ac.jp/projects/45m/projects-45m-trouble/ （2026年11月12日更新の版）
+#   年次報告YYYY：https://www.nao.ac.jp/contents/about/reports/annual-report-ja/annualYYYY-j.pdf
+#   プロポーザルの募集：https://www.nro.nao.ac.jp/projects/45m/proposals/calls/
+
+- id: be-sam45
+  name: SAM45（分光計）
+  kind: 分光計
+  part_of: nro45m
+  depends_on: [if-system]
+  status: 一部運用
+  offered: 提供
+  introduced: 2009年度に導入（アルマの ACA 相関器と同じ型）。2010年1月に一部を共同利用に公開
+  maintenance:
+    by: 所内
+    condition: 2026年11月に、16アレイを処理する部分の一つのマザーボードが故障し、アレイの一部が使えなくなる。同じ故障は過去に3回以上あり、予備のマザーボードは尽きている。故障した部分をエミュレータで置き換え、アレイ数の4分の3で運用を続けている
+    effort: 未記入
+  renewal: 後継の YATSUGATAKE への置き換えを準備中。部品の予備が尽きており、同じ故障が続けば運用できる部分が減る（仮説）
+  owner_role: 未定
+  maintainers: 未記入
+  repos:
+    - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
+  docs: データシート
+  sources:
+    - 導入：年次報告2009、年次報告2010
+    - 保守と更新：障害情報 Trouble ID 2026-1
+  note: 最大帯域 2 GHz（4096チャンネル）の16アレイからなる（年次報告2010）
+
+- id: be-yatsugatake
+  name: YATSUGATAKE（分光計）
+  kind: 分光計
+  part_of: nro45m
+  depends_on: [if-system]
+  status: 試験中
+  offered: リスクシェアで提供
+  introduced: 2026年11月12日に試験的な科学運用を開始
+  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
+  renewal: SAM45 の後継
+  owner_role: 未定
+  maintainers: 未記入
+  repos:
+    - {name: YATSUGATAKE, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE}
+    - {name: study-rfsoc, url: https://github.com/ars096/study-rfsoc}
+  sources:
+    - 導入：障害情報 Trouble ID 2026-1
+    - 提供：プロポーザルの募集（SAM45 の使えないアレイの代わりに、試験観測の段階として提供）
+    - 後継の位置づけ：YATSUGATAKE の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE
+
+- id: sw-sam45compat
+  name: SAM45 互換のソフトウェア（YATSUGATAKE で SAM45 の故障したアレイを肩代わりする）
+  kind: ソフトウェア
+  part_of: be-sam45
+  depends_on: [be-sam45, be-yatsugatake]
+  status: 試験中
+  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
+  renewal: SAM45 が廃止され、分光計が YATSUGATAKE に一本化された時点で archive する
+  owner_role: 未定
+  maintainers: 未記入
+  repos:
+    - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
+  sources:
+    - YATSUGATAKE-NRO45-sam45compat の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat
+  note: 障害情報にある「エミュレータ化」との関係は未確認
