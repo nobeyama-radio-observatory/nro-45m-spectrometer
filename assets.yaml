@@ -2,7 +2,7 @@
 # 項目の定義はハブの assets/README.md を参照。
 #   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
 # 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
-# 公開資料から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+# 公開資料から AI が埋め、聞き取り（interviews/）で補った。
 #
 # この台帳にない id（nro45m、if-system）は、ハブの assets/nro45m.yaml にある。
 # それぞれの運用リポジトリができたら、そちらに移る。
@@ -12,6 +12,7 @@
 #   障害情報：NRO45m 障害情報 https://www.nro.nao.ac.jp/projects/45m/projects-45m-trouble/ （2026年11月12日更新の版）
 #   年次報告YYYY：https://www.nao.ac.jp/contents/about/reports/annual-report-ja/annualYYYY-j.pdf
 #   プロポーザルの募集：https://www.nro.nao.ac.jp/projects/45m/proposals/calls/
+#   聞き取りYYYY-MM-DD 問N：interviews/YYYY-MM-DD.md の問N
 
 - id: be-sam45
   name: SAM45（分光計）
@@ -23,17 +24,25 @@
   introduced: 2009年度に導入（アルマの ACA 相関器と同じ型）。2010年1月に一部を共同利用に公開
   maintenance:
     by: 所内
-    condition: 2026年11月に、16アレイを処理する部分の一つのマザーボードが故障し、アレイの一部が使えなくなる。同じ故障は過去に3回以上あり、予備のマザーボードは尽きている。故障した部分をエミュレータで置き換え、アレイ数の4分の3で運用を続けている
-    effort: 未記入
-  renewal: 後継の YATSUGATAKE への置き換えを準備中。部品の予備が尽きており、同じ故障が続けば運用できる部分が減る（仮説）
-  owner_role: 未定
-  maintainers: 未記入
+    condition: >-
+      完成から時間が経ち、マザーボードや機能ボードの故障が増えている。故障の対応は年に数回で、予備品と交換している。
+      2026年11月に、16アレイを処理する部分の一つのマザーボードが故障した。同じ故障は過去に3回以上あり、予備のマザーボードは使い果たした。
+      故障したアレイ（A05〜A08）は無効化し（障害情報の「エミュレータ化」）、代わりに YATSUGATAKE でデータを取っている。アレイ数の4分の3で運用を続けている。
+      メーカーの保証は切れており、メーカーの支援はない。保守に必要な文書はすべて所内にある。作業は、判断できる2名に加えて外部の技術支援者1名が行う
+    effort: 中
+  renewal: 故障したところから YATSUGATAKE に切り替えていく。2026年11月の時点で4分の1を切り替えた。RFSoC の調達に時間がかかっており、完全な移行は早ければ2027年度末（仮説）
+  owner_role: 計算機グループ
+  maintainers: 2
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
   docs: データシート
   sources:
     - 導入：年次報告2009、年次報告2010
     - 保守と更新：障害情報 Trouble ID 2026-1
+    - 保守の手間と状況：聞き取り2026-11-18 問1、問2、問7
+    - 担い手の数：聞き取り2026-11-18 問2
+    - 更新の見込み：聞き取り2026-11-18 問3
+    - 担当：聞き取り2026-11-18 問0、問9
   note: 最大帯域 2 GHz（4096チャンネル）の16アレイからなる（年次報告2010）
 
 - id: be-yatsugatake
@@ -44,10 +53,14 @@
   status: 試験中
   offered: リスクシェアで提供
   introduced: 2026年11月12日に試験的な科学運用を開始
-  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
-  renewal: SAM45 の後継
-  owner_role: 未定
-  maintainers: 未記入
+  maintenance:
+    by: 所内
+    condition: 長期の稼働で見つかる問題の確認と、その修正が中心（2026年11月の時点）。開発する人と保守する人が同じ
+    effort: 中
+  renewal: SAM45 の後継。リスクシェアを終えて正式に提供する時期は未定で、SAM45 からの切り替えを終える時期（早ければ2027年度末）と同じ（仮説）
+  owner_role: 計算機グループ
+  maintainers: 1
+  docs: 保守のマニュアルはまだない。作成して計算機グループに展開する予定（時期は未定）
   repos:
     - {name: YATSUGATAKE, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE}
     - {name: study-rfsoc, url: https://github.com/ars096/study-rfsoc}
@@ -55,6 +68,9 @@
     - 導入：障害情報 Trouble ID 2026-1
     - 提供：プロポーザルの募集（SAM45 の使えないアレイの代わりに、試験観測の段階として提供）
     - 後継の位置づけ：YATSUGATAKE の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE
+    - 保守の手間と状況、担い手の数、資料：聞き取り2026-11-18 問4（手間は回答者の見立て）、問5
+    - 正式な提供の時期：聞き取り2026-11-18 問3、問6
+    - 担当：聞き取り2026-11-18 問0、問9
 
 - id: sw-sam45compat
   name: SAM45 互換のソフトウェア（YATSUGATAKE で SAM45 の故障したアレイを肩代わりする）
@@ -62,12 +78,15 @@
   part_of: be-sam45
   depends_on: [be-sam45, be-yatsugatake]
   status: 試験中
-  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
+  maintenance: {by: 所内, condition: 未記入, effort: 中}
   renewal: SAM45 が廃止され、分光計が YATSUGATAKE に一本化された時点で archive する
-  owner_role: 未定
-  maintainers: 未記入
+  owner_role: 計算機グループ
+  maintainers: 1
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
   sources:
     - YATSUGATAKE-NRO45-sam45compat の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat
-  note: 障害情報にある「エミュレータ化」との関係は未確認
+    - 保守の手間、担い手の数：聞き取り2026-11-18 問8（YATSUGATAKE と同じという見立て）
+    - 役割：聞き取り2026-11-18 問7
+    - 担当：聞き取り2026-11-18 問0、問9
+  note: SAM45 の無効化したアレイ（A05〜A08。README では2つ目の窓 A21〜A24 も含む）の代わりに、YATSUGATAKE で SAM45 と同じ形式のデータ（YKSP）を取るためのもの
