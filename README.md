@@ -32,7 +32,7 @@
 | [assets.yaml](assets.yaml) | 台帳。項目の定義はハブの [assets/README.md](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md) |
 | [interviews/](interviews/README.md) | 聞き取りの記録。公開資料にない値（保守の手間、担い手の数、更新の見込みなど）の出典 |
 
-台帳の `depends_on` と `part_of` にある id の置き場所は、ハブの[資産の索引](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md)で引けます。`nro45m`（アンテナ）は [nro-45m-antenna](https://github.com/nobeyama-radio-observatory/nro-45m-antenna) にあります。`sw-cosmos`（観測制御）は [nro-45m-control](https://github.com/nobeyama-radio-observatory/nro-45m-control) にあります。`if-system`（IF 系）は、運用リポジトリができるまでハブの [assets/nro45m.yaml](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/nro45m.yaml) にあります。
+台帳の `depends_on` と `part_of` にある id の置き場所は、ハブの[資産の索引](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md)で引けます。`nro45m`（アンテナ）は [nro-45m-antenna](https://github.com/nobeyama-radio-observatory/nro-45m-antenna) にあります。`sw-cosmos`（観測制御）は [nro-45m-control](https://github.com/nobeyama-radio-observatory/nro-45m-control) にあります。`if-system`（IF 系）は [nro-45m-if](https://github.com/nobeyama-radio-observatory/nro-45m-if) にあります。
 
 ## 進め方
 
