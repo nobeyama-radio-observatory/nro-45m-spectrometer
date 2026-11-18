@@ -32,7 +32,7 @@
 | [assets.yaml](assets.yaml) | 台帳。項目の定義はハブの [assets/README.md](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md) |
 | [interviews/](interviews/README.md) | 聞き取りの記録。公開資料にない値（保守の手間、担い手の数、更新の見込みなど）の出典 |
 
-台帳の `depends_on` と `part_of` にある `nro45m`（アンテナ）と `if-system`（IF 系）は、ハブの [assets/nro45m.yaml](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/nro45m.yaml) にあります。それぞれの運用リポジトリができたら、そちらに移ります。
+台帳の `depends_on` と `part_of` にある id の置き場所は、ハブの[資産の索引](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md)で引けます。`nro45m`（アンテナ）は [nro-45m-antenna](https://github.com/nobeyama-radio-observatory/nro-45m-antenna) にあります。`if-system`（IF 系）と `sw-cosmos`（観測制御）は、運用リポジトリができるまでハブの [assets/nro45m.yaml](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/nro45m.yaml) にあります。
 
 ## 進め方
 
@@ -42,7 +42,7 @@
 - 主ブランチに直接書き込まず、プルリクエストを出す。AI が作ったものにはラベル `AI作成` を付ける。
 - 事実には出典を添える。出典を示せない事実は仮説として扱う（ハブの判断記録 [0004](https://github.com/nobeyama-radio-observatory/nro-context/blob/main/decisions/0004-事実の根拠は出典で示す.md)）。
 
-担当：未定（決まるまでは、ハブの担当が預かる）
+担当：計算機グループ（[聞き取り 2026-11-18](interviews/2026-11-18.md) 問0、問9）
 
 ## 利用許諾
 
