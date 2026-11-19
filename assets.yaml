@@ -101,3 +101,24 @@
     - 役割：聞き取り2026-11-18 問7
     - 担当：聞き取り2026-11-18 問0、問9
   note: SAM45 の無効化したアレイの代わりに、YATSUGATAKE で SAM45 と同じ形式のデータ（YKSP）を取るためのもの。無効化したアレイは、SpW モードでない観測では A05〜A08、SpW モードでは A05〜A08 と A21〜A24（プロポーザルの募集、2026-11-18 に確認）。台帳と聞き取りの「A05〜A08」は SpW モードでない場合、互換のソフトウェアの README の「A21〜A24 も含む」は SpW モードの場合にあたる
+
+- id: sw-sam45compat-lc
+  name: 暫定の Local Controller（YKSP の観測時系列データを書く。SAM45 互換のソフトウェアの一部）
+  kind: ソフトウェア
+  part_of: sw-sam45compat
+  depends_on: [be-yatsugatake, be-sam45]
+  status: 試験中
+  maintenance: {by: 所内, condition: 未記入, effort: 未記入}
+  renewal: 暫定。YATSUGATAKE の最終版の連携ソフトウェア（YKSP-LC）が COSMOS のマネージャーにつながったら、役目を終える（nro-45m-control の interviews/2026-11-18.md 問6）。最終版は構成から作り直し、このソフトウェアを土台にしない（YATSUGATAKE-NRO45-sam45compat の README）
+  owner_role: 計算機グループ
+  maintainers: 1
+  repos:
+    - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
+    - {name: nro45-interfaces, url: https://github.com/nobeyama-radio-observatory/nro45-interfaces}
+  sources:
+    - 役割（SAM45 の観測時系列データから設定と時刻を受け取り、YATSUGATAKE で分光して、SAM45 と同じ形式の観測時系列データ（YKSP）を書く。観測が終わったら配信の場所に移し、マージに渡す）：YATSUGATAKE-NRO45-sam45compat の README、docs/plan.md の5
+    - COSMOS のマネージャーは改修しない：YATSUGATAKE-NRO45-sam45compat の README の「設計の方針」1
+    - 担い手の数：sw-sam45compat と同じ（聞き取り2026-11-18 問8 の、YATSUGATAKE と同じという見立て）
+  note: >-
+    マネージャーにはつながらず、SAM45 の観測時系列データを追いかけて動く。そのため、マネージャーは YKSP の装置の状態を受け取れない（仮説。observation-flow.md の2 の、通常の Local Controller とは状態を常にやりとりしているという記述から）。
+    書いた観測時系列データの配信と保管は、nro-data の db-yksp-delivery
