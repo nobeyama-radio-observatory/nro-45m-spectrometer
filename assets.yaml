@@ -35,7 +35,10 @@
   maintainers: 2
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
-  docs: データシート
+  docs:
+    - SAM45 のページ（構成、帯域と分解能の組み合わせ、SpW モード、IF の割り当て、観測のモード） https://www.nro.nao.ac.jp/projects/sam45/
+    - 観測者向けの障害の対処：トラブルシューティングのページが作られているが、開けない（ハブの users/README.md の「一次資料の食い違いと欠け」8）
+    - いま使えないアレイ：プロポーザル募集 https://www.nro.nao.ac.jp/projects/45m/proposals/calls/ の Spectrometer の節、障害情報 https://www.nro.nao.ac.jp/projects/45m/projects-45m-trouble/ （2026-11-19 に確認）
   sources:
     - 導入：年次報告2009、年次報告2010
     - 保守と更新：障害情報 Trouble ID 2026-1
@@ -63,7 +66,9 @@
   renewal: SAM45 の後継。リスクシェアを終えて正式に提供する時期は未定で、SAM45 からの切り替えを終える時期（早ければ2027年度末）と同じ（仮説）
   owner_role: 計算機グループ
   maintainers: 1
-  docs: 保守のマニュアルはまだない。作成して計算機グループに展開する予定（時期は未定）
+  docs:
+    - 保守のマニュアルはまだない。作成して計算機グループに展開する予定（時期は未定）
+    - 利用者向けのマニュアル（Manual of YATSUGATAKE、2026-11-12 版。プロポーザル募集から） https://www.nro.nao.ac.jp/wp-content/uploads/2026/11/yksp-manual-20261112-en.pdf （2026-11-19 に確認）
   repos:
     - {name: YATSUGATAKE, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE}
     - {name: study-rfsoc, url: https://github.com/ars096/study-rfsoc}
