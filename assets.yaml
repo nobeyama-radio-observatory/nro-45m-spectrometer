@@ -35,6 +35,7 @@
   maintainers: 2
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
+    - {name: nro45-interfaces, url: https://github.com/nobeyama-radio-observatory/nro45-interfaces}
   docs:
     - SAM45 のページ（構成、帯域と分解能の組み合わせ、SpW モード、IF の割り当て、観測のモード） https://www.nro.nao.ac.jp/projects/sam45/
     - 観測者向けの障害の対処：トラブルシューティングのページが作られているが、開けない（ハブの users/README.md の「一次資料の食い違いと欠け」8）
@@ -72,6 +73,7 @@
   repos:
     - {name: YATSUGATAKE, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE}
     - {name: study-rfsoc, url: https://github.com/ars096/study-rfsoc}
+    - {name: nro45-interfaces, url: https://github.com/nobeyama-radio-observatory/nro45-interfaces}
   sources:
     - 導入：障害情報 Trouble ID 2026-1
     - 提供：プロポーザルの募集（SAM45 の使えないアレイの代わりに、試験観測の段階として提供）
@@ -92,6 +94,7 @@
   maintainers: 1
   repos:
     - {name: YATSUGATAKE-NRO45-sam45compat, url: https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat}
+    - {name: nro45-interfaces, url: https://github.com/nobeyama-radio-observatory/nro45-interfaces}
   sources:
     - YATSUGATAKE-NRO45-sam45compat の README https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat （既存の COSMOS を使い、改修は最小限にとどめる）
     - 保守の手間、担い手の数：聞き取り2026-11-18 問8（YATSUGATAKE と同じという見立て）
