@@ -24,6 +24,7 @@
 | [YATSUGATAKE](https://github.com/nobeyama-radio-observatory/YATSUGATAKE) | 製品 | RFSoC 4x2 の上に作る電波分光計。配布する .bit と、その設計・仕様・性能評価 |
 | [YATSUGATAKE-NRO45-sam45compat](https://github.com/nobeyama-radio-observatory/YATSUGATAKE-NRO45-sam45compat) | 製品（45m 鏡専用、暫定） | SAM45 の故障したアレイを YATSUGATAKE で肩代わりするソフトウェア。SAM45 を廃止した時点で archive する |
 | [study-rfsoc](https://github.com/ars096/study-rfsoc) | 開発 | YATSUGATAKE の試作（projNNN）。仕上がったものを YATSUGATAKE に移す。観測所の組織ではなく個人のアカウントにある |
+| [nro45-interfaces](https://github.com/nobeyama-radio-observatory/nro45-interfaces) | 製品 | 45m 鏡の観測系のインターフェース仕様（観測指示書、観測時系列データ、観測生データなど）。ハブの判断記録 0013 |
 
 ## 中身
 
